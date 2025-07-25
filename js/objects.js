@@ -1,4 +1,5 @@
 // Game objects
+let GAME_STARTED = false;
 var hero = {};
 var playerShots = [];
 var enemyShots = [];

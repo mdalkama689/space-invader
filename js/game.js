@@ -6,6 +6,8 @@ var reset = function () {
 
 // The main game loop
 var main = function () {
+	if (!GAME_STARTED) return;
+
 	var now = Date.now();
 	var delta = now - then;
 
@@ -22,7 +24,13 @@ var main = function () {
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
 
+render()
 // Let's play this game!
 var then = Date.now();
 reset();
-main();
+// main();
+
+function startGameLoop() {
+  then = Date.now();
+  main();
+}
